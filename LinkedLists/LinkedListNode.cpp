@@ -19,9 +19,29 @@ void insertAtHead(Node* &head, int d) {
     head = newNode;
 }
 
+//Print Function which can print the linkedlist
+void print(Node* &head){
+    Node* temp = head;
+
+    while(temp != NULL) {
+        cout << temp -> data << " ";
+        temp = temp -> next;
+    }
+    cout << endl;
+}
+
 int main(){
     Node* node1 = new Node(10);
     cout << node1 -> data << endl;
     cout << node1 -> next << endl;
+
+    //head pointed to node1
+    Node* head = node1;
+
+    insertAtHead(head, 12);
+    insertAtHead(head, 15);
+
+    print(head);
+
     return 0;
 }
