@@ -19,6 +19,14 @@ void insertAtHead(Node* &head, int d) {
     head = newNode;
 }
 
+//Insertion at tail of the linkedlist
+void insertAtTail(Node* &tail, int d) {
+    //New Node creation
+    Node* newNode = new Node(d);
+    tail -> next = newNode;
+    tail = tail -> next;
+}
+
 //Print Function which can print the linkedlist
 void print(Node* &head){
     Node* temp = head;
@@ -37,9 +45,11 @@ int main(){
 
     //head pointed to node1
     Node* head = node1;
+    Node* tail = node1;
 
     insertAtHead(head, 12);
     insertAtHead(head, 15);
+    insertAtTail(tail, 1);
 
     print(head);
 
